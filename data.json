@@ -1,0 +1,37 @@
+{
+  "data": "2025-04-22",
+  "hora": "06:00",
+  "local": "Eixo 1",
+  "categoria": "A1",
+  "players": [
+    "aaa",
+    "bbb"
+  ],
+  "admin": "aaaa",
+  "maxSets": 1,
+  "gamesPerSet": 6,
+  "tieMax": 10,
+  "server": null,
+  "score": [
+    "0",
+    "0"
+  ],
+  "games": [
+    0,
+    0
+  ],
+  "setsVencidos": [
+    0,
+    0
+  ],
+  "tieBreakAtivo": false,
+  "warmupStart": null,
+  "matchStart": null,
+  "tempoAquecimentoSegundos": 0,
+  "tempoPartidaSegundos": 0,
+  "vencedorIndex": null,
+  "woWinnerIndex": null,
+  "partidaFinalizada": false,
+  "imagem": null,
+  "fotoEnviada": false
+}

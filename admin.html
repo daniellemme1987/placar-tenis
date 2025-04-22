@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Placar Tênis</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div id="login">
+    <h2>Área Administrativa</h2>
+    <input type="password" id="senha" placeholder="Digite a senha..." />
+    <button id="login-button">Entrar</button>
+    <p id="erroSenha" style="display:none;color:red;">Senha incorreta.</p>
+  </div>
+
+  <div id="conteudo" style="display:none;">
+    <h2>Agendamento da Partida</h2>
+    <label>Data:</label>
+    <input type="date" id="data" />
+
+    <label>Hora:</label>
+    <select id="hora">
+      <option value="">Selecione...</option>
+      <!-- Horários gerados via script -->
+    </select>
+
+    <label>Local:</label>
+    <select id="local">
+      <option value="">Selecione...</option>
+      <option value="eixo 1">eixo 1</option>
+      <option value="eixo 2">eixo 2</option>
+      <option value="eixo 3">eixo 3</option>
+      <option value="clube 1">clube 1</option>
+      <option value="clube 2">clube 2</option>
+    </select>
+
+    <label>Categoria:</label>
+    <select id="categoria">
+      <option value="">Selecione...</option>
+      <option value="a1">a1</option>
+      <option value="a2">a2</option>
+      <option value="b1">b1</option>
+      <option value="b2">b2</option>
+      <option value="c1">c1</option>
+      <option value="c2">c2</option>
+      <option value="d1">d1</option>
+      <option value="d2">d2</option>
+      <option value="e1">e1</option>
+      <option value="e2">e2</option>
+    </select>
+
+    <!-- Seguem os campos originais e botões do admin -->
+    <!-- ... -->
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const horaSelect = document.getElementById("hora");
+      for (let h = 6; h <= 21; h++) {
+        ["00", "30"].forEach(min => {
+          const valor = `${String(h).padStart(2, '0')}:${min}`;
+          const option = document.createElement("option");
+          option.value = valor;
+          option.textContent = valor;
+          horaSelect.appendChild(option);
+        });
+      }
+    });
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

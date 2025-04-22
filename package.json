@@ -1,0 +1,23 @@
+{
+  "name": "placar-live-tenis",
+  "version": "1.0.0",
+  "description": "Sistema de placar e live de tênis",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "socket.io-client": "^4.8.1",
+    "supertest": "^6.3.3"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,150 @@
+/* --- START OF FILE admin.css --- */
+
+:root {
+  /* Cores Principais */
+  --primary-color: #4CAF50;   /* Verde principal (Salvar, Ponto, Iniciar) */
+  --secondary-color: #FF9800; /* Laranja (Desfazer, Limpar Chat) */
+  --danger-color: #F44336;    /* Vermelho (Nova Partida) */
+  --warning-color: #28a745;  /* Verde alternativo (WO) */
+  --info-color: #17a2b8;     /* Azul info (Exibir Foto, Atualizar Live) */
+
+  /* Cores de Fundo e Texto */
+  --background-color: #f0f0f0; /* Fundo geral suave */
+  --content-background: rgba(255, 255, 255, 0.95); /* Fundo do conteúdo semi-transparente */
+  --input-bg-color: #fff;
+  --input-border-color: #ccc;
+  --text-color: #333;
+  --label-color: #333;
+  --header-color: #333;
+  --link-color: #0056b3;
+
+  /* Cores Estado Desabilitado */
+  --disabled-bg-color: #ccc;   /* Fundo do botão/input desabilitado */
+  --disabled-text-color: #666; /* Texto do botão/input desabilitado */
+  --disabled-border-color: #ddd;
+
+  /* Sombras e Bordas */
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --border-radius: 8px; /* Cantos mais suaves */
+  --border-radius-small: 4px; /* Para inputs/botões */
+
+  /* Espaçamento */
+  --padding: 10px;
+  --padding-large: 15px;
+  --margin-bottom: 15px;
+  --margin-bottom-large: 25px;
+}
+
+/* --- Estilo Geral do Body (sem login) --- */
+body#conteudoExibido {
+    font-family: Arial, sans-serif;
+    background: url("quadra.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Esconde a div de login (se ainda existir no HTML por algum motivo) */
+#login { display: none !important; }
+
+/* Garante que o conteúdo principal seja exibido */
+#conteudo {
+  display: block !important; /* Garante visibilidade */
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+/* --- Estilos Gerais Container --- */
+#conteudo .centered {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: var(--padding-large) 20px;
+  background-color: var(--content-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px var(--box-shadow-color);
+  text-align: center;
+}
+
+/* --- Cabeçalhos --- */
+#conteudo h1, #conteudo h2, #conteudo h3 {
+  color: var(--header-color);
+  margin-bottom: var(--margin-bottom-large);
+  text-align: center;
+}
+#conteudo h1 { font-size: 1.8em; }
+#conteudo h2 { font-size: 1.4em; padding-bottom: 8px; margin-top: 1.5em; }
+#conteudo h3 { font-size: 1.2em; margin-bottom: var(--margin-bottom); }
+
+/* --- Seções --- */
+section { margin-bottom: var(--margin-bottom-large); padding-bottom: var(--padding-large); border-bottom: 1px solid #eee; }
+section:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 5px; }
+
+/* --- Labels --- */
+#conteudo label { font-weight: bold; margin-top: var(--margin-bottom); margin-bottom: 5px; display: block; color: var(--label-color); font-size: 0.95em; width: 95%; margin-left: auto; margin-right: auto; text-align: center; }
+
+/* --- Inputs e Selects --- */
+#conteudo input, #conteudo select { width: 95%; padding: var(--padding); margin: 5px auto var(--margin-bottom) auto; display: block; border: 1px solid var(--input-border-color); border-radius: var(--border-radius-small); box-sizing: border-box; font-size: 14px; text-align: center; background-color: var(--input-bg-color); color: var(--text-color); }
+#conteudo select { text-align-last: center; cursor: pointer; }
+#conteudo input[type="file"] { text-align: left; padding: 5px; cursor: pointer; }
+#conteudo input[type="time"] { text-align: center; }
+#conteudo input:focus, #conteudo select:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3); }
+
+/* --- Botões --- */
+#conteudo button { width: 95%; padding: var(--padding) var(--padding-large); margin: 10px auto var(--margin-bottom) auto; display: block; border: none; border-radius: var(--border-radius-small); box-sizing: border-box; font-size: 15px; font-weight: bold; text-align: center; cursor: pointer; color: white; background-color: var(--primary-color); transition: background-color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease; }
+#conteudo button:hover:not(:disabled) { opacity: 0.9; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+
+/* Cores específicas */
+#salvar-partida:hover:not(:disabled), #salvar-jogo:hover:not(:disabled), #start-warmup:hover:not(:disabled), #start-match:hover:not(:disabled), #pontoJogador1:hover:not(:disabled), #pontoJogador2:hover:not(:disabled) { background-color: #45a049; }
+#desfazer { background-color: var(--secondary-color); }
+#desfazer:hover:not(:disabled) { background-color: #e68a00; }
+#clearChatButton { background-color: var(--secondary-color) !important; }
+#clearChatButton:hover:not(:disabled) { background-color: #e68a00 !important; }
+#declararWO { background-color: var(--warning-color); }
+#declararWO:hover:not(:disabled) { background-color: #218838; }
+#novaPartida { background-color: var(--danger-color) !important; }
+#novaPartida:hover:not(:disabled) { background-color: #d32f2f !important; }
+#enviarFoto, #updateLiveButton { background-color: var(--info-color); width: auto; padding: 10px 20px; margin-left: auto; margin-right: auto; }
+#enviarFoto:hover:not(:disabled), #updateLiveButton:hover:not(:disabled) { background-color: #138496; }
+
+/* --- Estado Desabilitado --- */
+#conteudo input:disabled, #conteudo select:disabled { background-color: var(--disabled-bg-color); color: var(--disabled-text-color); cursor: not-allowed; border-color: var(--disabled-border-color); opacity: 0.7; }
+#conteudo button:disabled { background-color: var(--disabled-bg-color) !important; color: var(--disabled-text-color) !important; cursor: not-allowed !important; opacity: 0.6 !important; box-shadow: none !important; }
+
+/* --- Grupos de Botões --- */
+.button-group { display: flex; justify-content: center; gap: 10px; margin-top: var(--margin-bottom); flex-wrap: wrap; }
+.button-group button { width: auto; flex-grow: 1; min-width: 120px; margin: 5px; }
+#pontoJogador1, #pontoJogador2 { min-width: 140px; }
+
+/* --- Placar --- */
+.placar-coluna { background: #fff; padding: var(--padding-large); border: 1px solid var(--input-border-color); border-radius: var(--border-radius); margin: var(--margin-bottom-large) 0; box-shadow: 0 2px 5px var(--box-shadow-color); text-align: center; }
+.placar-coluna table { width: 100%; border-collapse: collapse; margin: var(--margin-bottom) auto; max-width: 95%; }
+.placar-coluna th, .placar-coluna td { padding: 10px 8px; border-bottom: 1px solid #ddd; text-align: center; font-size: 1.1em; vertical-align: middle; }
+.placar-coluna td span { font-weight: bold; }
+.placar-coluna th { background-color: #eaeaea; font-weight: bold; font-size: 1em; color: #555; }
+.top-info { font-size: 0.95em; color: #444; margin: 5px auto; font-weight: normal; opacity: 0; transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out; height: 0; overflow: hidden; width: fit-content; }
+.top-info strong { font-weight: bold; }
+.top-info.visible { opacity: 1; height: auto; }
+#cronometroAquecimento, #inicioPartida, #cronometro, #aquecimentoStatus, #partidaStatus { font-weight: bold; margin-top: 12px; color: var(--text-color); font-size: 1.05em; text-align: center; }
+#vencedor { font-weight: bold; margin: 15px auto; padding: var(--padding); background-color: #e8f5e9; border-radius: var(--border-radius-small); color: var(--primary-color); font-size: 1.2em; display: none; width: fit-content; }
+
+/* --- Seção de Foto Admin --- */
+#fotoSection { margin-top: var(--margin-bottom-large); text-align: center; border-bottom: none; padding-bottom: 0; margin-bottom: 20px; display: none; /* Controlado por JS */ }
+#fotoSection h3 { margin-bottom: var(--margin-bottom); text-align: center; }
+#fotoWrapper { margin: var(--margin-bottom) auto; text-align: center; display: flex; justify-content: center; background-color: #eee; border: 1px solid var(--input-border-color); border-radius: var(--border-radius); min-height: 150px; align-items: center; max-width: 95%; }
+#fotoExibida { max-width: 90%; max-height: 300px; height: auto; border-radius: var(--border-radius-small); display: none; /* Controlado por JS */ }
+
+/* --- Config Gerais (Live/Chat) --- */
+#geral-config-section h2 { text-align: center; }
+#geral-config-section label { text-align: center; margin-left: auto; margin-right: auto; }
+#geral-config-section input { text-align: center; }
+#liveUpdateMessage, #chatClearMessage { font-size: 0.9em; margin-top: -10px; margin-bottom: var(--margin-bottom); min-height: 1.2em; font-weight: bold; text-align: center; }
+
+/* --- Erro de Senha (mantido caso precise reativar) --- */
+.erro { color: var(--danger-color); font-size: 0.9em; margin-top: 10px; font-weight: bold; display: none; text-align: center; }
+
+/* --- Utilitários --- */
+.horario-oculto { display: none !important; } /* CORREÇÃO BUG 1: Esconde opções de hora passadas */
+.desfazer-laranja { background-color: var(--secondary-color) !important; }
+.desfazer-laranja:hover:not(:disabled) { background-color: #e68a00 !important; }
+
+/* --- FIM ADMIN.CSS --- */

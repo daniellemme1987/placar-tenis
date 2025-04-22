@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar Tênis Ao Vivo</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Tênis Ao Vivo</h1>
+        <button id="toggle-theme">Modo Escuro</button>
+    </header>
+
+    <!-- Seção da Foto -->
+    <section id="player-photo-section" style="display: none;">
+        <h2>Jogadores</h2>
+        <img id="player-photo" alt="Foto dos Jogadores">
+    </section>
+
+    <!-- Seção da Live -->
+    <section id="live-section" style="display: none;">
+        <h2>Vídeo Ao Vivo</h2>
+        <div id="player-container">
+             <div id="player">
+                 <p style="text-align: center; padding-top: 20%; color: #ccc;">Carregando vídeo...</p>
+             </div>
+        </div>
+    </section>
+
+    <hr style="margin: 25px 0;">
+
+    <!-- Seção do Placar -->
+    <section class="info-jogo"> <p> <span title="Data"><span id="data">--/--</span></span> | <span title="Hora"><span id="hora">--:--</span></span> | <span title="Local"><span id="local">--</span></span> | <span title="Categoria"><span id="categoria">--</span></span> | <span title="Admin"><span id="admin">--</span></span> </p> </section>
+    <section class="placar"> <div class="jogador"> <h2 id="jogador1-nome">Jogador 1</h2> <span id="sacador1" class="sacador" style="display: none;" title="Sacador">(S)</span> <p class="score-display">P: <span id="pontos-jogador1">0</span></p> <p class="score-display">G: <span id="games-jogador1">0</span></p> <p class="score-display">S: <span id="sets-jogador1">0</span></p> </div> <div class="status-central"> <p id="status-jogo" style="display: none;"></p> <div id="cronometros"> <p id="cronometro-aquecimento-container" style="display: none;">Aquec: <span id="aquecimento-tempo">00:00:00</span> (<span id="aquecimento-hora">--:--</span>)</p> <p id="cronometro-jogo-container" style="display: none;">Partida: <span id="jogo-tempo">00:00:00</span> (<span id="jogo-hora">--:--</span>)</p> </div> <p id="vencedor" class="vencedor" style="display: none;"></p> </div> <div class="jogador"> <h2 id="jogador2-nome">Jogador 2</h2> <span id="sacador2" class="sacador" style="display: none;" title="Sacador">(S)</span> <p class="score-display">P: <span id="pontos-jogador2">0</span></p> <p class="score-display">G: <span id="games-jogador2">0</span></p> <p class="score-display">S: <span id="sets-jogador2">0</span></p> </div> </section>
+    <hr style="margin: 25px 0;">
+
+    <!-- Seção do Chat -->
+    <section class="chat"> <div class="chat-header"> <h3>Chat ao Vivo</h3> <p>Espectadores online: <span id="total-espectadores">0</span></p> <ul id="usuarios-online"></ul> </div> <div id="chat-historico" class="chat-historico"> <p>Bem-vindo ao chat!</p> </div> <form id="chat-form"> <input type="text" id="chat-mensagem" placeholder="Digite sua mensagem..." autocomplete="off" required> <button type="submit">Enviar</button> </form> </section>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
